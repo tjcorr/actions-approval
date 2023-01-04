@@ -1,0 +1,16 @@
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu
+    steps:
+      - run: echo building code
+      
+  promote:
+    runs-on: ubuntu
+    needs: [ build ]
+    environment: prod
+    steps:
+       - run: echo promote
+      
